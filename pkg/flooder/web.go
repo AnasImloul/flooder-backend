@@ -1,4 +1,4 @@
-package src
+package flooder
 
 import (
 	"encoding/json"
@@ -40,7 +40,7 @@ func SolveGridHandler(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(response)
 }
 
-// RegisterRoutes registers the src-specific routes to the provided router
+// RegisterRoutes registers the pkg-specific routes to the provided router
 func RegisterRoutes(r *mux.Router) {
 	r.HandleFunc("/solve", SolveGridHandler).Methods("POST")
 }
