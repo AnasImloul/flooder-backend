@@ -1,7 +1,7 @@
 package main
 
 import (
-	"flood-backend/src"
+	"flood-backend/pkg/flooder"
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
@@ -34,7 +34,7 @@ func main() {
 	floodRouter := r.PathPrefix("/flood").Subrouter()
 
 	// Register flood routes with the floodRouter
-	src.RegisterRoutes(floodRouter)
+	flooder.RegisterRoutes(floodRouter)
 
 	// Apply CORS middleware to the main router
 	handlerWithCORS := enableCORS(r)

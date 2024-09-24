@@ -14,7 +14,7 @@ RUN GOPROXY=direct go mod download
 COPY . .
 
 # Build the Go app
-RUN CGO_ENABLED=0 GOOS=linux go build -o flood-backend
+RUN CGO_ENABLED=0 GOOS=linux go build -o "flooder" ./cmd/flooder
 
 # Use a minimal image for the final container
 FROM alpine:latest
